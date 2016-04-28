@@ -289,6 +289,10 @@ It's a little tricky to have an entire class run streaming operations on a singl
 Note: if you get a bind error do this:
 export SPARK_LOCAL_IP=\`ip add|grep inet|grep global|awk '{ print $2 }'|cut -d '/' -f 1\`
 
+or
+export SPARK_LOCAL_IP=127.0.0.1
+export SPARK_MASTER_IP=127.0.0.1
+
 >Notice the spark.ui.port flag - Because we are on a shared cluster, we need to specify a radom port so we don't clash with other users. We're also setting max cores = 1 or else one job will hog all the resources. 
 
 Try some CQL commands
